@@ -1,4 +1,7 @@
 <?php 
+
+session_start();
+
 include_once "models/Post.php";
 
 class PostController {
@@ -30,21 +33,39 @@ class PostController {
         $descricao = $_POST['descricao'];
         $nomeArquivo = $_FILES['img']['name'];
         $linkTemp = $_FILES['img']['tmp_name'];
-        $caminhoSalvar = "views/img/$nomeArquivo";
+        $caminhoSalvar = "./views/img/$nomeArquivo";
         move_uploaded_file($linkTemp, $caminhoSalvar);
-       
-        $resultado = $post->criarPost($caminhoSalvar, $descricao);
+        //if(isset($_SESSION)){
+        //    echo('<pre>');
+        //     print_r($_SESSION);
+        //     echo('</pre>');
+        // } else {
+        //    echo "oi";
+        // }
+        // exit;
+        $users_id = $_SESSION['fake']['user'][0]['id'];
+        // echo ($users_id);
+        // exit;
+
+        $resultado = $post->criarPost($users_id, $caminhoSalvar, $descricao);
+
         if($resultado){
             header('Location:/fake-instagram-POO/posts');
         }else {
             echo "deu errado meu irmão";
         }
+
     }
 
     private function listarPosts(){
         $post = new Post();
         $listaPosts = $post->listarPosts();
         $_REQUEST['posts'] = $listaPosts;
+
+        foreach($listarPosts as $post){
+            $post->retornarUser($post['users_id']);
+        }
+
         $this->viewPosts();
     }
 }

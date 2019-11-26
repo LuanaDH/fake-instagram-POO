@@ -19,6 +19,7 @@
     <main class="board">
     <?php foreach($posts as $post): ?>
         <div class="card mt-5">
+        <?php echo $post->nomeCompl; ?>
             <img id="cardimg" src="<?php echo $post->img; ?>" alt="Card image cap">
             <div class="card-body">
                 <p class="card-text">
@@ -27,7 +28,8 @@
             </div>
         </div>
     <?php endforeach; ?>
-        <a class="float-button" href="/fake-instagram/formulario-post">&#10010;</a>
+        <a class="float-button" href="formulario-post">&#10010;</a>
+        <a href= "/fake-instagram-POO/logout.php" type="submit" name="btn" id="btn" value="Logout" class="botao">Logout</a>
     </main>
    
     

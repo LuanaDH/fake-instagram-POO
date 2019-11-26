@@ -22,4 +22,33 @@
             $controller->acao($rotas);
         break;
 
+        case "cadastrar-user":
+            include "controllers/CadastroController.php";
+            $controller = new CadastroController();
+            $controller->acao($rotas);
+        break;
+
+        case "cadastro":
+            include "controllers/CadastroController.php";
+            $controller = new CadastroController();
+            $controller->acao($rotas);
+        break;
+
+        case "login-user": //para pegar as informções
+            include "controllers/LoginController.php";
+            $controller = new LoginController();
+            $controller->acao($rotas);
+        break;
+
+        case "login": //visualizar
+            include "controllers/LoginController.php";
+            $controller = new LoginController();
+            $controller->acao($rotas);
+        break;
+
+        case "logout":
+            include "controllers/LogoutController.php";
+            $controller = new LogoutController();
+            $controller->acao($rotas);
+        break;
     }
