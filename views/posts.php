@@ -29,7 +29,7 @@
         </div>
     <?php endforeach; ?>
         <a class="float-button" href="formulario-post">&#10010;</a>
-        <a href= "/fake-instagram-POO/logout.php" type="submit" name="btn" id="btn" value="Logout" class="botao">Logout</a>
+        <a href= "/fake-instagram-POO/logout.php" type="submit" name="btn" id="btn" value="Logout" class="btn btn-primary">Logout</a>
     </main>
    
     

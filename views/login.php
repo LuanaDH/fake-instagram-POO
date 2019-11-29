@@ -12,23 +12,23 @@
 </head>
 <body>
     
-    <main>
-        <h1>Login</h1>
-        <h6> <?php if(array_key_exists('loginError', $_SESSION)){
-         echo "NÃO LOGADO";} ?> </h6>
+    <main class= "d-flex justify-content-center">
+        <div class= "card col-4 p-3">
+            <h1>Login</h1>
+                <h6> <?php if(array_key_exists('loginError', $_SESSION)){
+                    echo "NÃO LOGADO";} ?> </h6>
 
-        <form action= "login-user" method= "POST" enctype= "multipart/form-data">
+            <form action= "login-user" method= "POST" enctype= "multipart/form-data">
 	
-	        <label>Email:</label>
-		        <input type="text" name="email" id="email" class="name"/>
-			
-	        <label>Senha: </label>
-		        <input type="password" name="senha" id="senha" class="text" />
+            <input type="text" class="form-control form-control-sm mb-3 name" name="email" placeholder="E-mail" id="email" required>
 
-	            <input type="submit" name="btn" id="btn" value="Login" class="botao" /> 
-
-                
-        </form>
+            <input type="password" class="form-control form-control-sm mb-3 text" name="senha" id="senha" placeholder="Senha" required>
+            
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </div>        
+            </form>
+        </div>
 
     </main>
 

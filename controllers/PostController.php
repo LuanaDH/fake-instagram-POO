@@ -46,13 +46,16 @@ class PostController {
         $users_id = $_SESSION['fake']['user'][0]['id'];
         // echo ($users_id);
         // exit;
+        // var_dump($_SESSION);
+        // exit;
 
         $resultado = $post->criarPost($users_id, $caminhoSalvar, $descricao);
 
         if($resultado){
             header('Location:/fake-instagram-POO/posts');
         }else {
-            echo "deu errado meu irmão";
+            //echo "deu errado meu irmão";
+            header('Location:/fake-instagram-POO/login');
         }
 
     }
@@ -62,9 +65,9 @@ class PostController {
         $listaPosts = $post->listarPosts();
         $_REQUEST['posts'] = $listaPosts;
 
-        foreach($listarPosts as $post){
-            $post->retornarUser($post['users_id']);
-        }
+        // foreach($listarPosts as $post){
+        //     $post->retornarUser($post['users_id']);
+        // }
 
         $this->viewPosts();
     }

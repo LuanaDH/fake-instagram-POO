@@ -12,18 +12,18 @@ class Post extends Conexao {
         return $query->execute([$users_id, $image, $descricao]);
     }
 
-    public function listarPosts(){
-        $db = parent::criarConexao();
-        $query = $db->query('SELECT * FROM posts ORDER BY id DESC');
-        $resultado = $query->fetchAll(PDO::FETCH_OBJ);
-        return $resultado;
-    }
+    // public function listarPosts(){
+    //     $db = parent::criarConexao();
+    //     $query = $db->query('SELECT * FROM posts ORDER BY id DESC');
+    //     $resultado = $query->fetchAll(PDO::FETCH_OBJ);
+    //     return $resultado;
+    // }
 
-    public function retornarUser($users_id){
-        $db = parent::criarConexao();
-        $query = $db->query("SELECT nomeCompl FROM users WHERE id = $users_id");
-        $resultado = $query->fetchAll(PDO::FETCH_OBJ);
-        return $resultado;
+     public function listarPosts(){
+         $db = parent::criarConexao();
+         $query = $db->query('SELECT posts.img, posts.descricao, users.nomeCompl from posts LEFT JOIN users ON posts.users_id = users.id ORDER BY posts.id DESC');
+         $resultado = $query->fetchAll(PDO::FETCH_OBJ);
+         return $resultado;
     }
 
 }
