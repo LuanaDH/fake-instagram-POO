@@ -12,8 +12,12 @@
 
             <?php
             if($loginUser){ ?>
+            <div class= "d-flex mt-3">
                 <p><?php echo "Olá, ".$loginUser; ?></p>
-                <a href="/fake-instagram-POO/logout.php">Sair</a>
+            </div>
+            <div class= "d-flex ml-3">     
+                <a href="/fake-instagram-POO/logout.php" type="submit" class="btn btn-primary">Logout</a>
+            </div>    
             <?php }else{ ?>
                     <a href="/fake-instagram-POO/cadastro.php">Cadastre-se</a>
                     <a href="/fake-instagram-POO/login.php">Login</a>

@@ -13,18 +13,20 @@
     
     <?php include "views/includes/header.php"; ?>
     <main class="board">
+        <div class= "d-flex justify-content-center mt-3">
         <h1> Cadastro de novo Post </h1>
+        </div>
+
         <form action="/fake-instagram-POO/cadastrar-post" method="POST" enctype='multipart/form-data'>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Example file input</label>
-                <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
+
+            <div class="d-flex mt-3 form-group">
+                <input type="file" class="form-control-file" name="img" required>
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição</label>
-                <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Insira uma descrição">
+                <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Insira uma descrição" required>
             </div>
             <button type="submit" class="btn btn-success">Postar</button>
-            <a href= "/fake-instagram-POO/logout.php" type="submit" name="btn" id="btn" value="Logout" class="botao">Logout</a>
         </form>
 
     </main>

@@ -10,22 +10,27 @@
 </head>
 <body>
 
-    <main>
-        <h1>Cadastro de Usuário</h1>
+    <main class= "d-flex justify-content-center">
+        <div class= "card col-4 p-3">
+            <h1>Faça seu cadastro</h1>
 
         <form action= "cadastrar-user" method= "POST" enctype= "multipart/form-data">
-            <label>Nome Completo:</label>
-		        <input type="text" name="nomeCompl" id="nomeCompl" class="name"/>
+
+            <label>Nome:</label>
+        <input type="text" class="form-control form-control-sm mb-3 name" name="nomeCompl" id="nomeCompl" placeholder= "Escreva seu nome completo" required>
 	
 	        <label>Email:</label>
-		        <input type="text" name="email" id="email" class="name"/>
+        <input type="email" name="email" id="email" class= "form-control form-control-sm mb-3 name" placeholder= "Digite um email valido" required>
 			
 	        <label>Senha: </label>
-		        <input type="password" name="senha" id="senha" class="text" />
+        <input type="password" class="form-control form-control-sm mb-3 text" name="senha" id="senha" placeholder="Cadastre uma senha" required>   
 
-	            <input type="submit" name="btn" id="btn" value="Cadastrar" class="botao" /> 
+            <div class="d-flex justify-content-center">
+	            <input type="submit" name="btn" id="btn" value="Cadastrar" class="btn btn-primary" /> 
+            </div>    
         </form>
 
+        </div>
     </main>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

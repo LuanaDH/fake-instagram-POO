@@ -14,7 +14,7 @@
     
     <main class= "d-flex justify-content-center">
         <div class= "card col-4 p-3">
-            <h1>Login</h1>
+            <h1>Faça seu login</h1>
                 <h6> <?php if(array_key_exists('loginError', $_SESSION)){
                     echo "NÃO LOGADO";} ?> </h6>
 
@@ -24,8 +24,15 @@
 
             <input type="password" class="form-control form-control-sm mb-3 text" name="senha" id="senha" placeholder="Senha" required>
             
-                <div class="d-flex justify-content-center">
+                <div class= "d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary">Entrar</button>
+                </div>
+                <div class= "d-flex justify-content-center mt-4 mb-2">    
+                    <h6>Caso ainda não tenha cadastro:</h6>
+                </div>   
+                <div class= "d-flex justify-content-center">   
+                    <a href= "/fake-instagram-POO/cadastro" type="submit" class="btn btn-primary">Cadastrar</a>
+                        
                 </div>        
             </form>
         </div>

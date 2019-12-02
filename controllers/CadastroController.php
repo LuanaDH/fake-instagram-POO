@@ -28,7 +28,7 @@ class CadastroController{
         $user = new User();
         $resultado = $user->cadastroUser($nome, $email, $senha);
         if($resultado){
-            header('Location:/fake-instagram-POO/posts');
+            header('Location:/fake-instagram-POO/login');
         }else {
             echo "ERRO!!!!!!";
         }
